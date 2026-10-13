@@ -1,4 +1,4 @@
-import {type FC, type JSX, memo} from 'react';
+import type { FC, JSX } from 'react';
 
 import { transformToString } from '../../helpers';
 
@@ -16,4 +16,4 @@ const ListItemButton: FC<ListItemButtonProps> = ({ onCLick, styles, icon }) => {
     );
 };
 
-export default memo(ListItemButton);
+export default ListItemButton;

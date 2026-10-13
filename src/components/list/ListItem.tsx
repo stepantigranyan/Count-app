@@ -1,4 +1,4 @@
-import {type FC, memo} from 'react';
+import type { FC } from 'react';
 import type { Item } from '../../types'
 
 import ListItemButton from "./ListItemButton.tsx";
@@ -52,4 +52,4 @@ const ListItem: FC<ListItemProps> = ({ list, id, changeList }) => {
     );
 };
 
-export default memo(ListItem);
+export default ListItem;

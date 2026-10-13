@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState} from 'react';
 import type { Item, TopButtonInner } from './types';
 
 import TopButton from './components/topButtons/TopButton.tsx';
@@ -54,7 +54,6 @@ const App = () => {
     const restore = (): void => {
         setList(createInitialList(5));
     }
-
 
     return (
         <main className={'h-screen flex items-center justify-center'}>
