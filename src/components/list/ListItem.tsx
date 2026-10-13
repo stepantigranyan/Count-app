@@ -13,34 +13,25 @@ import { IncrementIcon, DecrementIcon, DeleteIcon} from '../icons';
 import { transformToString } from '../../helpers';
 
 type ListItemProps = {
-    list: Item[];
-    id: number;
-    changeList: (list: Item[]) => void;
+    item: Item;
+    changeItem: (id: number, operation: 'increment' | 'decrement') => void;
+    delItem: (id: number) => void;
 };
 
-const ListItem: FC<ListItemProps> = ({ list, id, changeList }) => {
+const ListItem: FC<ListItemProps> = ({ item, changeItem, delItem }) => {
+    const { count, id } = item;
+
     const increment = () => {
-        const incrementedItem = list.find((item) => item.id === id)!;
-        incrementedItem.count += 1;
-        changeList([...list]);
+        changeItem(id, 'increment');
     };
 
     const decrement = () => {
-        const decrementedItem = list.find((item) => item.id === id)!;
-        if (decrementedItem.count === 0) {
-            return;
-        }
-
-        decrementedItem.count -= 1;
-        changeList([...list]);
+        changeItem(id, 'decrement');
     }
 
     const del = () => {
-        const newList = list.filter((item) => item.id !== id);
-        changeList(newList);
+        delItem(id);
     }
-
-    const { count } = list.find((item) => item.id === id)!;
 
     return (
         <li className={'flex items-center gap-x-3'} key={id}>

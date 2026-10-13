@@ -4,13 +4,21 @@ import ListItem from "./ListItem.tsx";
 
 type ListProps = {
     list: Item[];
-    changeList: (arr: Item[]) => void;
+    changeItem: (id: number, operation: 'increment' | 'decrement') => void;
+    delItem: (id: number) => void;
 };
 
-const List: FC<ListProps> = ({ list, changeList }) => {
+const List: FC<ListProps> = ({ list, changeItem, delItem }) => {
     return (
         <ul className={'flex flex-col gap-y-3'}>
-            {list.map((item) => <ListItem list={list} id={item.id} key={item.id} changeList={changeList} />)}
+            {list.map((item) => (
+                <ListItem
+                    key={item.id}
+                    item={item}
+                    changeItem={changeItem}
+                    delItem={delItem}
+                />
+            ))}
         </ul>
     );
 };

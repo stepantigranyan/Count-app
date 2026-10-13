@@ -2,7 +2,7 @@ const averageListItemInnerStyles: string[] = [
     'flex', 'justify-center', 'items-center', 'size-10', 'rounded-xl', 'text-white', 'cursor-pointer',
 ];
 
-const averageTopButtonStyles: string[] = [
+const averageButtonStyles: string[] = [
     'flex', 'items-center', 'gap-x-2', 'px-5', 'py-2', 'text-white', 'text-lg', 'rounded-xl', 'cursor-pointer',
 ]
 
@@ -23,9 +23,9 @@ export const deleteButtonStyles: string[] = [
 ];
 
 export const refreshButtonStyles: string[] = [
-    ...averageTopButtonStyles, 'bg-green-500', 'hover:bg-green-700',
+    ...averageButtonStyles, 'bg-green-500', 'hover:bg-green-700', 'disabled:bg-gray-600', 'disabled:cursor-not-allowed'
 ];
 
 export const restoreButtonStyles: string[] = [
-    ...averageTopButtonStyles, 'bg-violet-500', 'hover:bg-violet-700', 'disabled:bg-gray-600', 'disabled:cursor-not-allowed',
+    ...averageButtonStyles, 'bg-violet-500', 'hover:bg-violet-700', 'disabled:bg-gray-600', 'disabled:cursor-not-allowed',
 ]
